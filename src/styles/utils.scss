@@ -1,0 +1,30 @@
+.flex-between {
+  gap: 1.5em;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-start {
+  justify-items: stretch;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-around {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+}

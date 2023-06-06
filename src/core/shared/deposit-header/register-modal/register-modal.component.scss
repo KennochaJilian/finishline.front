@@ -1,0 +1,13 @@
+@import "src/styles/variables";
+
+.auth-with-google{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 2rem;
+    width: 6rem;
+    background-color:$blue;
+  }
+}

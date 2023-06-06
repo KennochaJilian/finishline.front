@@ -1,0 +1,56 @@
+@import "src/styles/variables";
+
+form{
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  clr-input-container{
+    width: 80%
+  }
+  clr-textarea-container{
+    width: 80%;
+    .clr-textarea{
+      max-width: 100%;
+      width: 100%;
+      border: 1px solid $blue;
+      border-radius: 1rem;
+    }
+  }
+  .button-submit{
+    margin-top: 1rem;
+  }
+}
+.span-errors{
+  color: var(--clr-forms-invalid-color, #c21d00);
+}
+.clr-form-control {
+  margin-bottom:1.5rem;
+}
+.clr-form-horizontal .clr-form-control{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    .clr-input{
+      border: 1px solid $blue;
+      border-radius: 1rem;
+      min-height:1.8rem;
+      width: 100%;
+    }
+}
+@media (max-width: 768px) {
+  form{
+    clr-input-container{
+      width: 100%
+    }
+    clr-textarea-container{
+      width: 100%;
+      .clr-textarea{
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+

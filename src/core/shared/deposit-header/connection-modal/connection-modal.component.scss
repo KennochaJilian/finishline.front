@@ -1,0 +1,23 @@
+@import "src/styles/variables";
+
+.auth-with-google{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 2rem;
+    width: 6rem;
+    background-color:$blue;
+  }
+}
+.reset-password{
+  color:$blue;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  :hover{
+    text-decoration: underline;
+  }
+}

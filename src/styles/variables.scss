@@ -1,0 +1,38 @@
+/* Colors */
+$grey_light: #f4f4f4;
+$grey_fontLight: #bbbbbb;
+$grey_dark: #333333;
+
+$salmon_extraLight: #d2bbb0;
+$salmon_light: #d2a68e;
+$salmon: #F1AA82;
+$salmon_dark: #b2724f;
+$salmon_font: #a25a34;
+$salmonGrey_font: #5d4336;
+
+$green_light: #dbf4e8;
+$green: #3aa370;
+$green_font: #259860;
+
+$red_light: #fbe6e5;
+$red: #dc5952;
+
+$blue_light: #80a8c4;
+$blue-dark: #2c6486;
+$blue: #428fc3;
+
+$purple_light: #E7DBFE;
+$purple: #3F2777;
+$purple_font: #7433FF;
+
+// Mixins
+@mixin shadow-large-blueBG {
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.06);
+}
+
+@mixin shadow-large {
+  box-shadow: 0 .7rem 2rem rgba(0, 0, 0, 0.15);
+}
+@mixin bg-salmon{
+  background-color: rgba($salmon, 0.3);
+}

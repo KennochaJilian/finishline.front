@@ -1,0 +1,47 @@
+body .card .btn-link {
+  padding: initial;
+}
+
+body .btn,
+body .btn.btn-link {
+  padding: 20px;
+  z-index: 3;
+}
+body .nav-item .btn.btn-link {
+  padding: 0;
+}
+
+body .btn.btn-link:hover{
+  ::before{
+    opacity: 0.2;
+  }
+}
+
+.card-footer {
+  display: flex;
+  padding: 0;
+  padding-top: 1rem;
+}
+
+.datagrid-header .datagrid-row, .datagrid .datagrid-column, .datagrid-footer{
+  background: transparent;
+}
+
+*:focus,
+.clr-checkbox-wrapper input[type="checkbox"]:focus + label::before {
+  outline: none;
+}
+
+.clr-subtext-wrapper {
+  flex-basis: 0%;
+  display: flex;
+}
+
+.clr-input-group .clr-input-group-icon-action cds-icon,
+.clr-input-group .clr-input-group-icon-action clr-icon {
+  transform: none !important;
+}
+button:focus{
+  outline:none;
+  outline-offset: 0;
+}

@@ -1,0 +1,230 @@
+@import "variables";
+
+body {
+  --clr-btn-border-radius: 0.9rem;
+}
+
+.modal-content button.close,
+.btn {
+  border-radius: 0.9rem;
+  border: 0;
+  padding: 0;
+  color: $salmonGrey_font;
+  background-color: rgba($salmon_extraLight, 0);
+  transition: all 0.15s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.7rem;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: nowrap;
+  box-shadow: none;
+
+  &:hover {
+    background-color: rgba($salmon_extraLight, 1);
+  }
+
+  &:active {
+    background-color: $salmon;
+    color: $grey_light;
+    transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
+  }
+
+  &.btn-settings,
+  &.btn-add {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &.btn-primary,
+  &.btn-primaryWithIcone,
+  &.btn-outline,
+  &.btn-link:not(.nav-link) {
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.7rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    box-shadow: none !important;
+    padding: 0 0.65rem;
+
+    &:active,
+    &:active::before {
+      background-color: $salmon;
+      color: #fff;
+    }
+
+    clr-icon {
+      height: 0.95rem;
+      width: 0.95rem;
+      transform: translateY(-0.05rem);
+    }
+    &.btn-secondary{
+      background-color: aqua;
+    }
+  }
+
+  &.btn-primary {
+    padding: 0 0.65rem;
+    color: $salmon;
+    background-color: white;
+    border: 1px solid $salmon;
+
+    &:hover {
+      color: #ffffff;
+      background-color: darken($salmon, 10);
+    }
+
+    &:active {
+      background-color: darken($salmon, 15);
+    }
+
+    clr-icon {
+      color: #ffffff;
+    }
+
+    .fixed-menu-content & {
+      padding: 1rem;
+    }
+  }
+
+  &.btn-outline,
+  &.btn-outline-secondary {
+    padding: 0 0.65rem !important;
+    color: $grey_dark;
+    background-color: #fff;
+    box-shadow: none !important;
+
+    clr-icon {
+      color: $grey_dark;
+      transform: none;
+      transition: all 0.15s ease-in-out;
+    }
+
+    &:hover {
+      color: $grey_dark;
+      background-color: $salmon_extraLight;
+    }
+
+    &:active {
+      color: #fff;
+      background-color: $salmon;
+
+      clr-icon {
+        color: #fff;
+      }
+    }
+  }
+
+  &.btn-primaryWithIcone {
+    padding: 0 0.45rem;
+    margin-left: 0;
+    margin-right: 0;
+    color: $grey_dark;
+    background-color: $salmon_extraLight;
+    color: $salmonGrey_font;
+    gap: 0.7rem;
+    position: relative;
+    transition: 0.15s color ease-in-out;
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    clr-icon {
+      color: #fff;
+    }
+
+    &::before {
+      content: "";
+      background-color: $salmon;
+      height: 1.8rem;
+      width: 1.8rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 1.8rem;
+      transition: 0.15s width ease-in-out;
+      z-index: 1;
+    }
+
+    &:hover {
+      color: white;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:active,
+    &:active::before {
+      background-color: darken($salmon, 10);
+    }
+  }
+}
+
+
+
+  .card-header [class*="title"],
+  .label.clickable,
+  .kpi-alert,
+  .btn-seren-link {
+    &:focus-visible {
+      outline: 0.15rem dashed $salmon;
+      outline-offset: 0.25rem;
+    }
+  }
+
+  .btn.dropdown-toggle {
+    display: flex;
+  }
+
+  body:not(.home) .btn.btn-link:not(.nav-link),
+  .btn-group.btn-outline .btn {
+    background-color: $grey_light;
+    box-shadow: none;
+    color: $salmonGrey_font;
+    transition: all 0.15s ease-in-out;
+    vertical-align: top;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    span + &:first-of-type {
+      margin-left: 1rem;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: 0.05rem;
+    }
+
+    cds-icon {
+      color: $salmonGrey_font;
+      transition: color 0.15s ease-in-out;
+    }
+
+    &:hover {
+      background: darken($grey_light, 5);
+    }
+
+    &:active {
+      color: #fff;
+      background: $salmon;
+
+      cds-icon {
+        color: #fff;
+      }
+    }
+  }
+  .btn-deposit{
+    fa-icon{
+      display: flex;
+      margin-right: 1rem;
+    }
+  }
+

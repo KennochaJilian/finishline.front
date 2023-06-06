@@ -1,0 +1,38 @@
+<nav class="header-responsive" [ngClass]="{'open': isMenuOpen}">
+  <div id="nav-responsive-logo">
+    <a href="/" (click)="toggleMenu()">
+      <img src="/assets/img/logo/logo_saumon.png" alt="deposit logo" />
+    </a>
+  </div>
+  <div class="user-modals" *ngIf="!isConnected else userConnected">
+    <app-register-modal></app-register-modal>
+    <app-connection-modal></app-connection-modal>
+  </div>
+  <ng-template #userConnected>
+<!--    <app-user-buttons></app-user-buttons>-->
+  </ng-template>
+  <hr>
+  <div class="links-responsive">
+    <div>
+      <h4>Notre produit</h4>
+      <a href="" (click)="toggleMenu()"><fa-icon [icon]="play"></fa-icon> Coffre de document</a>
+      <a href="" (click)="toggleMenu()"> <fa-icon [icon]="play"></fa-icon>Nos offres</a>
+    </div>
+    <div>
+      <h4>Nous contacter</h4>
+      <a href="mailto:contact@deposit.ovh" > <fa-icon [icon]="play"></fa-icon>contact@deposit.ovh</a>
+      <a [routerLink]="['/pages/contact']" (click)="toggleMenu()"> <fa-icon [icon]="play"></fa-icon>Contact</a>
+    </div>
+    <div>
+      <h4>A propos</h4>
+      <a [routerLink]="['/pages/qui-sommes-nous']" (click)="toggleMenu()"> <fa-icon [icon]="play"></fa-icon>A propos</a>
+    </div>
+  </div>
+
+
+
+</nav>
+<div class="menu-toggle" [ngClass]="{'isMenuOpen': isMenuOpen}" (click)="toggleMenu()">
+  <fa-icon [icon]="isMenuOpen ? times : bars" size="2x"></fa-icon>
+</div>
+

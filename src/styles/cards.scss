@@ -1,0 +1,144 @@
+@import "variables";
+
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+  @include shadow-large;
+  border: 0;
+  padding: 1rem;
+  margin: 0;
+  // height: 100%;
+  margin-top: 1em;
+
+  .home & {
+    @include shadow-large-blueBG;
+  }
+}
+
+.card-section {
+  padding: 1rem;
+}
+
+.card-header {
+  border: 0;
+  display: flex;
+  justify-content: flex-start;
+
+  .card > & {
+    padding: 1rem 1rem 0 1rem;
+
+    .btn-settings,
+    .btn-add {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .card-section & {
+    padding: 0;
+    position: relative;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 0.9rem;
+    background: 55% -300% / 140% 550% radial-gradient(50% 50% at 50% 50%, rgba($grey_light, 0) 0%, $grey_light 100%);
+
+    *[class*="title"] {
+      position: relative;
+      z-index: 1;
+      flex-grow: 1;
+      display: flex;
+      color: $grey_dark;
+      text-decoration: none;
+      transition: z-index 0.3s ease-in-out;
+
+      [class*="icon"] {
+        position: relative;
+        border-radius: 1rem;
+        color: $salmon_font;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 2.2rem;
+        height: 100%;
+        z-index: 2;
+        line-height: 1.8rem;
+        transform: translateX(0);
+        white-space: nowrap;
+
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        top: -0.1rem;
+        left: -0.1rem;
+
+        background: $salmon_light;
+        border-radius: 1rem;
+
+        transition: width 0.3s ease-in-out;
+      }
+
+      &:hover {
+        z-index: 2;
+
+        span {
+          left: 50%;
+          transform: translateX(-50%);
+          color: $salmon_font;
+        }
+
+        &::before {
+          width: calc(100% + 0.2rem);
+        }
+      }
+
+      &:active [class*="icon"]::before {
+        background: darken($salmon_light, 10%);
+      }
+    }
+  }
+}
+
+.card-block {
+  .card > & {
+    padding: 0.5rem 1rem 0;
+  }
+
+  .card-section & {
+    padding: 1rem 0 0;
+  }
+
+  .capcod-picker {
+    width: 100%;
+
+    label {
+      margin-left: 0;
+    }
+    .clr-select-wrapper select,
+    .clr-multiselect-wrapper select {
+      width: 12.5em;
+      // float: right;
+    }
+    clr-select-container.clr-form-control {
+      margin-right: 0;
+      text-align: right;
+    }
+  }
+
+  .clr-textarea-wrapper {
+    margin: 0;
+  }
+}

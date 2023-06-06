@@ -1,0 +1,10 @@
+<div id="user-buttons">
+  <div class="user-button">
+    <a [routerLink]="['/dashboard/home']">
+      <img src="../../../assets/img/default-user.jpg"/>
+    </a>
+  </div>
+  <div class="user-button logout" (click)="logout()">
+    <fa-icon [icon]="logoutIcon" size="2x"></fa-icon>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<app-deposit-modal
+  [title]="title"
+  [isOpen]="openValue"
+  [content]="form"
+  (isOpenChange)="isOpen = $event">
+
+</app-deposit-modal>
+<ng-template #form>
+  <app-deposit-form
+    [formBuilder]="formBuilder"
+    [object]="object"
+    [editMode]="editMode"
+    (submitted)="onSubmit($event)">
+  </app-deposit-form>
+
+  <div *ngIf="extraContent">
+    <ng-content *ngTemplateOutlet="extraContent"> </ng-content>
+  </div>
+</ng-template>

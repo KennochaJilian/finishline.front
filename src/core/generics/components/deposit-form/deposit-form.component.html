@@ -1,0 +1,45 @@
+<form clrForm [formGroup]="depositForm" (ngSubmit)="onSubmit()">
+  <ng-container *ngFor="let field of formFields">
+    <ng-container [ngSwitch]="field.type">
+      <clr-textarea-container *ngSwitchCase="'textarea'">
+      <textarea clrTextarea [name]="field.name" rows="5" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name">
+      </textarea>
+        <clr-control-error *ngFor="let error of field.controlErrors">
+          <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
+          {{error.display}}
+          </span>
+        </clr-control-error>
+      </clr-textarea-container>
+
+      <clr-checkbox-wrapper *ngSwitchCase="'checkbox'">
+        <label [innerHTML]="field.placeholder"></label>
+        <input type="checkbox" clrCheckbox [formControlName]="field.name">
+        <clr-control-error *ngFor="let error of field.controlErrors">
+    <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
+      {{ error.display }}
+    </span>
+        </clr-control-error>
+      </clr-checkbox-wrapper>
+
+      <clr-input-container *ngSwitchDefault>
+        <input clrInput [type]="field.type" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name"/>
+        <clr-control-error *ngFor="let error of field.controlErrors">
+          <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
+          {{error.display}}
+          </span>
+        </clr-control-error>
+      </clr-input-container>
+    </ng-container>
+  </ng-container>
+  <div class="tooltip tooltip-md button-submit" role="tooltip" aria-haspopup="true">
+    <button type="submit" class="btn btn-primary" [disabled]="!depositForm.valid">
+      {{editMode ? formBuilder?.textUpdateBtnSubmit : formBuilder?.textAddBtnSubmit}}
+    </button>
+     <span *ngIf="!depositForm.valid" class="tooltip-content">
+      <span *ngFor="let error of currentErrors">
+      {{error}} <br>
+      </span>
+    </span>
+  </div>
+</form>
+

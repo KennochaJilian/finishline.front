@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/clarity-reset";
+@import "styles/variables";
+@import "styles/utils";
+@import "styles/fonts";
+@import "styles/base";
+@import "styles/generic";
+@import "styles/header";
+@import "styles/nav";
+@import "styles/buttons";
+@import "styles/tags";
+@import "styles/modals";
+@import "styles/cards";

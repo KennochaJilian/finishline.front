@@ -1,0 +1,18 @@
+<app-deposit-modal
+  [title]="title"
+  [content]="deleteContent"
+  [isOpen]="openValue"
+  (isOpenChange)="isOpen = $event"
+></app-deposit-modal>
+<ng-template #deleteContent>
+  <p>Voulez-vous supprimer l'élément ? </p>
+  <div *ngIf="extraInformations">
+    <ng-container *ngTemplateOutlet="extraInformations">
+
+    </ng-container>
+  </div>
+  <div class="action-buttons">
+    <button class="btn btn-primary" (click)="isOpen = false"> Annuler </button>
+    <button class="btn btn-danger" (click)="onDelete()"> Supprimer</button>
+  </div>
+</ng-template>

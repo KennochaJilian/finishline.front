@@ -1,0 +1,11 @@
+<app-deposit-modal
+[title]="title"
+[content]="fileUploadContent"
+[isOpen]="openValue"
+(isOpenChange)="isOpen = $event"
+>
+</app-deposit-modal>
+<ng-template #fileUploadContent>
+  <input type="file" [accept]="authorizedExtensions"
+         (change)="onFileSelected($event)">
+</ng-template>

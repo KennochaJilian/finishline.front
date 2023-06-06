@@ -1,0 +1,156 @@
+.text-center {
+  text-align: center;
+}
+
+.ck-reset p {
+  color: black;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+color-chrome-fields {
+  font-family: Metropolis, sans-serif;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.badge {
+  align-self: center;
+}
+
+img.avatar {
+  height: 50px;
+  border-radius: 25px;
+}
+
+.avatar-uploader {
+  max-width: 15em;
+}
+
+.tab-content {
+  padding-top: 1em;
+}
+
+.ng-select {
+  max-width: 100%;
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+  line-height: 1.2em;
+}
+
+.edit-button-container {
+  position: relative;
+}
+
+.clr-treenode-content {
+  justify-content: space-between;
+}
+
+.widget-container {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+}
+
+.widget {
+  width: auto;
+  min-width: 280px;
+  max-width: 450px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  flex-grow: 1;
+}
+
+.breathing-space {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+clr-alert > div {
+  margin-top: 0 !important;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+.fixed-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: #fafafa;
+  width: 100%;
+  border-top: solid var(--clr-color-neutral-500) 1px;
+  padding: 0.7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.fixed-menu-spacer {
+  height: 5em;
+}
+
+.alert.alert-info.ng-star-inserted {
+  margin: 0;
+}
+.bold {
+  font-weight: bold;
+}
+
+.clr-error .clr-input:not([readonly]){
+  border: 1px solid var(--clr-forms-invalid-color, #c21d00);
+  border-radius: 1rem;
+  min-height:1.8rem;
+  width: 100%;
+}
+.clr-error .clr-subtext {
+  margin-top: 0.7rem;
+  margin-left:0.6rem
+}
+m-auto{
+  margin:auto;
+}
+.loading-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh
+}
+.header-actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1{
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .header-actions{
+    .btn-deposit{
+      span{
+        display: none;
+      }
+      fa-icon{
+        margin: 0
+      }
+    }
+  }
+}
+

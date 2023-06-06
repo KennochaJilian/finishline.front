@@ -1,0 +1,12 @@
+<button class="btn btn-primary btn-lg" (click)="connectionModal = true"> Se connecter </button>
+<app-deposit-editor-modal
+  [title]="'Se connecter'"
+  [formBuilder]="connectionFormBuilder"
+  [isOpen]="connectionModal"
+  (isOpenChange)="connectionModal = $event"
+  [service]="authApiService"
+  (onSubmitForm)="onConnectionSubmit($event)"
+  [customForm]="true"
+>
+</app-deposit-editor-modal>
+

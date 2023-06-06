@@ -1,0 +1,11 @@
+<button class="btn btn-primary btn-lg" (click)="registerModal = true"> S'inscrire </button>
+<app-deposit-editor-modal
+  [title]="'S\'inscrire'"
+  [formBuilder]="registerFormBuilder"
+  [isOpen]="registerModal"
+  (isOpenChange)="registerModal = $event"
+  [service]="authApiService"
+  (onSubmitForm)="onRegisterSubmit($event)"
+  [customForm]="true"
+>
+</app-deposit-editor-modal>

@@ -1,0 +1,92 @@
+.tag {
+  font-weight: 600;
+  font-size: .6rem;
+  line-height: 1.1rem;
+  padding: 0 .35rem;
+  border-radius: .5rem;
+  border: none;
+  height: 1.1rem;
+  background: darken($grey_light, 5);
+  color: $grey_dark;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.tag-green {
+  @extend .tag;
+  background: $green_light;
+  color: $green_font;
+}
+
+.tag-blue {
+  @extend .tag;
+  background: darken($salmon_extraLight, 5);
+  color: $salmon_font;
+}
+
+.tag-orange {
+  @extend .tag;
+  background: $blue_light;
+  color: $blue;
+}
+
+.tag-red {
+  @extend .tag;
+  background: $red_light;
+  color: $red;
+}
+
+.tag-purple {
+  @extend .tag;
+  background: $purple_light;
+  color: $purple_font;
+}
+
+.ca-container .label-info {
+  @extend .tag-blue;
+}
+
+.label.label-info {
+  @extend .tag-blue;
+}
+
+.label.label-danger {
+  @extend .tag-red;
+}
+
+.label.label-warning {
+  @extend .tag-orange;
+}
+
+.label.label-success {
+  @extend .tag-green;
+}
+
+.label.label-purple {
+  @extend .tag-purple;
+}
+
+.label {
+  > button {
+    border: 0 !important;
+    height: .9rem;
+    width: .9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -5px !important;
+    background-color: #fff;
+
+    &:hover {
+      background-color: $salmon;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: darken($salmon, 10);
+      color: #fff;
+    }
+  }
+}

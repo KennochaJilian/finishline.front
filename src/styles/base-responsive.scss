@@ -1,0 +1,42 @@
+@import "variables";
+
+@media screen and (max-width: 1200px) {
+  .container{
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+#section-auth-buttons-container{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  app-baseline{
+    #baseline{
+      flex-direction: column;
+      aside{
+        width: 100%!important;
+      }
+    }
+  }
+  #section-auth-buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    @include bg-salmon;
+    padding: 1.5rem 0;
+
+  }
+  #bp-web-widget{
+    display: none;
+  }
+  .tarteaucitronIconBottomLeft {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+
+}
