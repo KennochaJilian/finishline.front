@@ -7,7 +7,37 @@ export class RegisterFormBuilder implements DepositFormBuilder {
   optIn = true;
 
   build(): DepositField[] {
-    return [{
+    return [
+      {
+        placeholder: "Prénom",
+        type:  "text",
+        required: true,
+        validators: [
+          Validators.required,
+        ],
+        controlErrors: [
+          {
+            name: 'firstname',
+            display: "Le prénom est requis"
+          }
+        ],
+        name: "firstname"
+      },{
+        placeholder: "Nom",
+        type:  "text",
+        required: true,
+        validators: [
+          Validators.required,
+        ],
+        controlErrors: [
+          {
+            name: 'lastname',
+            display: "Le nom est requis"
+          }
+        ],
+        name: "lastName"
+      },
+      {
       placeholder: "Email",
       type:  "text",
       required: true,
@@ -51,11 +81,8 @@ export class RegisterFormBuilder implements DepositFormBuilder {
             display: 'Le mot de passe est requis'
           }
         ],
-        name: "password_confirmation"
+        name: "passwordConfirmation"
       }
     ];
   }
-
-
-
 }

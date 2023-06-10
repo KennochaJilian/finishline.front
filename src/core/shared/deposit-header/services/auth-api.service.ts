@@ -10,11 +10,10 @@ import {ServiceGeneric} from "../../../generics/services/http/service-generic.se
 export class AuthApiService extends ServiceGeneric {
   constructor(@Inject('env') protected override environment: Environment, http : DepositHttpService) {
     super(environment, http, 'Auth');
-    this.baseUrl = `${this.environment.apiUrl}`;
-
   }
   register(user: any) : Observable<any>{
     const registerUrl = `${this.baseUrl}/register`
+    console.log(registerUrl);
     return this.http.post(registerUrl, user)
   }
 

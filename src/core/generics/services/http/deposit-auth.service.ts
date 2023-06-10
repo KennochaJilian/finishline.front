@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import {Token} from "../../interfaces/token.interface";
 import {AuthApiService} from "../../../shared/deposit-header/services/auth-api.service";
 import {Observable, Subject} from "rxjs";
+import {User} from "../../../shared/models/user";
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,16 @@ export class DepositAuthService {
   public setToken(accessToken: string, expiredAt:Date){
     const token = {accessToken, expiredAt}
     localStorage.setItem('token', JSON.stringify(token));
+  }
+  public setUser(user: User){
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+  public getUser(): User | null{
+    const user = localStorage.getItem('user');
+    if(user){
+      return JSON.parse(user);
+    }
+    return null
   }
   public removeToken(){
     localStorage.removeItem('token')

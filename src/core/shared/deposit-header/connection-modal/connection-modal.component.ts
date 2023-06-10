@@ -5,6 +5,7 @@ import {ConnectionFormBuilder} from "../builders/connection-form.builder";
 import {Router} from "@angular/router";
 import {AccountService} from "../services/account.service";
 import {SnotifyService} from "ng-snotify";
+import {TokenModel} from "../../../generics/classes/token-model";
 
 @Component({
   selector: 'app-connection-modal',
@@ -23,13 +24,13 @@ export class ConnectionModalComponent {
   ) {
   }
 
-  private manageConnection(res: any){
-    this.authService.setToken(res.token, res.expired_at)
-    this.router.navigate(['dashboard/home'])
+  private manageConnection(res: TokenModel){
+    this.authService.setToken(res.token, res.expiredAt)
+    // this.router.navigate(['dashboard/home'])
   }
   onConnectionSubmit(user: any){
     this.authApiService.signIn(user).subscribe({
-      next: res => this.manageConnection(res)
+      next: (res) => this.manageConnection(res.object)
     })
   }
 }

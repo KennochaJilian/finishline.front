@@ -13,7 +13,7 @@ export class ServiceGeneric implements IServiceGeneric {
      protected http: DepositHttpService,
      entityName: string
    ) {
-     this.baseUrl = `${this.environment.apiUrl}/v1/${entityName}`;
+     this.baseUrl = `${this.environment.apiUrl}/${entityName}`;
   }
 
   updateNotify: string = '';

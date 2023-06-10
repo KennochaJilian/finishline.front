@@ -1,6 +1,5 @@
 export class ValidationModel{
-  hasErrors?: boolean
+  success?: boolean
   object: any
-  errors : any
-  message?: string
+  errors : string[]
 }

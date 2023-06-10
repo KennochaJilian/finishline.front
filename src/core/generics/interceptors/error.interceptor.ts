@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpErrorResponse, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
-import {Observable, of, throwError} from 'rxjs';
+import {map, Observable, of, throwError} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {SnotifyService} from "ng-snotify";
 import {ValidationModel} from "../classes/validation-model";
@@ -10,17 +10,17 @@ export class ErrorInterceptor implements HttpInterceptor {
   constructor(private sno: SnotifyService) {}
 
   manageError(error: ValidationModel){
-    const keys = Object.keys(error.errors);
-    if(keys.length > 0){
-      keys.forEach(key => {
-        const errorMessage = `${key} : ${error.errors[key]}`
-        this.sno.error(errorMessage)
-      })
-      return;
-    }
-    if(error.message && error.message != ''){
-      this.sno.error(error.message)
-    }
+    // const keys = Object.keys(error.errors);
+    // if(keys.length > 0){
+    //   keys.forEach(key => {
+    //     const errorMessage = `${key} : ${error.errors[key]}`
+    //     this.sno.error(errorMessage)
+    //   })
+    //   return;
+    // }
+    // if(error.message && error.message != ''){
+    //   this.sno.error(error.message)
+    // }
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -29,6 +29,20 @@ export class ErrorInterceptor implements HttpInterceptor {
         console.log(error.error)
         this.manageError(error.error)
         return of();
+      }),
+      map((response: any) => {
+        // Renvoyer l'objet en cas de succès
+        const vm: ValidationModel = response.body;
+        if(vm && vm.success){
+          console.log(vm);
+          return response
+        }
+        if(vm && !vm.success){
+          vm.errors.forEach(error => {
+            this.sno.error(error);
+          })
+        }
+        return response;
       })
     );
   }

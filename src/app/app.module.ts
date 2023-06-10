@@ -33,7 +33,6 @@ const routes: Route[] = [
   ],
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
-    { provide: HTTP_INTERCEPTORS, useClass: DepositTokenCrsfInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     SnotifyService,
