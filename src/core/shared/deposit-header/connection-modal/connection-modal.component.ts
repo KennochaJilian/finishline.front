@@ -26,7 +26,8 @@ export class ConnectionModalComponent {
 
   private manageConnection(res: TokenModel){
     this.authService.setToken(res.token, res.expiredAt)
-    // this.router.navigate(['dashboard/home'])
+    this.authService.setUser(res.user);
+    this.router.navigate(['dashboard/home'])
   }
   onConnectionSubmit(user: any){
     this.authApiService.signIn(user).subscribe({

@@ -1,0 +1,28 @@
+@import "src/styles/variables";
+#dashboard-wrapper{
+  display: flex;
+  margin-bottom: 5rem;
+  align-items: stretch;
+  height: 100%;
+  min-height: 100vh;
+  .container {
+    width: initial;
+    height: initial;
+    min-width: initial;
+    max-width: initial;
+    position: relative;
+    margin: initial;
+  }
+  #aside-dashboard{
+    min-height: 100vh;
+    min-width: 8rem;
+    max-width: 8rem;
+    background-color: $purple;
+    color: white;
+    a{
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+

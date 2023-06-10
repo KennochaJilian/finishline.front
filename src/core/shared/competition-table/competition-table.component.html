@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Sport</th>
+    <th>Date</th>
+    <th>Adresse</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let competition of competitions">
+    <td>{{ competition.title }}</td>
+    <td>{{ competition.sport.name }}</td>
+    <td>{{ competition.startDate | date:'dd/MM/yyyy' }}</td>
+    <td>{{ competition.address }}</td>
+
+  </tr>
+  </tbody>
+</table>

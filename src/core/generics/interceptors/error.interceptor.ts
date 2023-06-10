@@ -26,19 +26,17 @@ export class ErrorInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        console.log(error.error)
         this.manageError(error.error)
         return of();
       }),
       map((response: any) => {
-        // Renvoyer l'objet en cas de succès
-        const vm: ValidationModel = response.body;
+        const vm = response.body;
         if(vm && vm.success){
           console.log(vm);
           return response
         }
-        if(vm && !vm.success){
-          vm.errors.forEach(error => {
+        if(vm && !vm.success && vm.errors && vm.errors.length > 0){
+          vm.errors.forEach((error: string) => {
             this.sno.error(error);
           })
         }

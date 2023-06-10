@@ -1,4 +1,4 @@
-/* Font classes */
+@import "variables";
 
 .title {
   font-family: "Roboto", sans-serif;
@@ -24,6 +24,7 @@ div {
 h1{
   &,
   &:not([cds-text]) {
+    color: $salmon;
     @extend .title;
     font-size: 2rem;
     font-weight:300;
@@ -33,6 +34,7 @@ h2{
   &,
   &:not([cds-text]) {
     @extend .title;
+    color: $purple;
     font-size: 1.35rem;
     font-weight:300;
   }
@@ -113,9 +115,6 @@ body,
   gap: 1rem;
   margin: 0 0 1.5rem;
 
-  h1 {
-    //@extend .title;
-  }
 
   button.btn-add-item {
     @extend .btn-primaryWithIcone;

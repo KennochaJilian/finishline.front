@@ -11,10 +11,17 @@ import {environment} from "../environments/environment";
 import {registerLocaleData} from "@angular/common";
 import localeFr from '@angular/common/locales/fr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {UserGuard} from "../core/generics/guards/user.guard";
 
 registerLocaleData(localeFr);
 
 const routes: Route[] = [
+  {
+    path: 'dashboard',
+    canActivate: [UserGuard],
+    loadChildren: () => import('./dashboard/dashboard.module').then((x) => x.DashboardModule)
+  },
   {
     path: '',
     loadChildren: () => import('./home/home.module').then((x) => x.HomeModule)

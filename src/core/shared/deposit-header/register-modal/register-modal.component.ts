@@ -22,7 +22,7 @@ export class RegisterModalComponent {
     private manageConnection(res: TokenModel): void {
     console.log(res);
     this.authService.setToken(res.token, res.expiredAt);
-    // this.router.navigate(['dashboard/home']);
+    this.router.navigate(['dashboard/home']);
   }
 
   onRegisterSubmit(user: any): void {

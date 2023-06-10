@@ -7,11 +7,12 @@ import {RegisterFormBuilder} from "./deposit-header/builders/register-form.build
 import { RegisterModalComponent } from './deposit-header/register-modal/register-modal.component';
 import { ConnectionModalComponent } from './deposit-header/connection-modal/connection-modal.component';
 import { RouterModule } from '@angular/router';
-import {NgClass, NgIf} from "@angular/common";
+import {DatePipe, NgClass, NgForOf, NgIf} from "@angular/common";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {ResetPasswordFormBuilder} from "./deposit-header/builders/reset-password-form.builder";
 import {HeaderResponsiveComponent} from "./deposit-header/header-responsive/header-responsive.component";
 import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
+import { CompetitionTableComponent } from './competition-table/competition-table.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
     RegisterModalComponent,
     ConnectionModalComponent,
     HeaderResponsiveComponent,
-    UserButtonsComponent
+    UserButtonsComponent,
+    CompetitionTableComponent
   ],
   imports: [
     GenericsModule,
@@ -29,6 +31,8 @@ import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
     NgIf,
     NgClass,
     FontAwesomeModule,
+    DatePipe,
+    NgForOf,
   ],
   providers: [
     ConnectionFormBuilder,
@@ -40,6 +44,7 @@ import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
     DepositFooterComponent,
     RegisterModalComponent,
     ConnectionModalComponent,
+    CompetitionTableComponent,
   ],
   bootstrap: []
 })

@@ -1,0 +1,9 @@
+<h1>Mes compétitions</h1>
+<h2> Quelles compétitions allez vous créer aujourd'hui ? </h2>
+<ng-container *ngIf="competitions && competitions.length > 0; else noCompet">
+  <app-competition-table [competitions]="competitions"></app-competition-table>
+</ng-container>
+<ng-template #noCompet>
+  <span>Vous n'avez pas encore créé de competitions</span>
+</ng-template>
+
